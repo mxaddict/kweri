@@ -1,5 +1,16 @@
 # kweri
 
+<!--toc:start-->
+
+- [kweri](#kweri)
+  - [Usage](#usage)
+  - [Why build this?](#why-build-this)
+  - [Configuration](#configuration)
+  - [Tips](#tips)
+  - [Future changes](#future-changes)
+  - [Buy me a coffee](#buy-me-a-coffee)
+  <!--toc:end-->
+
 This is a simple CLI program that searches in your favorite search engine using your
 system's default browser.
 
@@ -40,6 +51,10 @@ This allows you to quickly search in the cli like so.
 ```sh
 q "I like turtles"
 ```
+
+## Future changes
+
+Would be nice to allow for stdin if you don't pass a query string?
 
 ## Buy me a coffee
 
