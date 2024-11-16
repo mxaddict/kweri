@@ -6,7 +6,7 @@ homepage = "https://kryptic.sh"
 repository = "https://github.com/mxaddict/kweri"
 readme = "README.md"
 categories = ["command-line-utilities"]
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 [dependencies]

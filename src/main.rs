@@ -5,7 +5,7 @@ use std::process::ExitCode;
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Cli {
-    query: String,
+    query: Option<String>,
 }
 
 static CONFIG_TOML: &[u8] = include_bytes!("config.toml");
@@ -43,12 +43,24 @@ fn main() -> ExitCode {
         .unwrap();
 
     let args = Cli::parse();
-    let url = format!("{}{}", conf.get_string("engine").unwrap(), args.query);
+    let mut query = args.query.unwrap_or_default();
 
-    println!("Kwerieng for '{}'", args.query);
+    if query.is_empty() {
+        println!("Whatcha looking fur?");
+        let res = std::io::stdin().read_line(&mut query);
+        if res.is_err() {
+            eprintln!("Could not read line from stdin");
+            return ExitCode::FAILURE;
+        }
+    }
+
+    let query = query.trim();
+    let url = format!("{}{}", conf.get_string("engine").unwrap(), query);
+
+    println!("Kwerieng for '{}'", query);
 
     if webbrowser::open(url.as_str()).is_err() {
-        eprintln!("Failed to open kweri: '{}'", args.query);
+        eprintln!("Failed to open kweri: '{}'", query);
         return ExitCode::FAILURE;
     }
 
