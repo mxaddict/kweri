@@ -1,0 +1,16 @@
+[package]
+name = "kweri"
+description = "This is a simple CLI program that searches in your favorite search engine using your system's default browser."
+license = "MIT"
+homepage = "https://kryptic.sh"
+repository = "https://github.com/mxaddict/kweri"
+readme = "README.md"
+categories = ["command-line-utilities"]
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.21", features = ["derive"] }
+config = "0.14.1"
+directories = "5.0.1"
+webbrowser = "1.0.2"
