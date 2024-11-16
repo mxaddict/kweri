@@ -54,7 +54,7 @@ q "I like turtles"
 
 ## Future changes
 
-- [ ] Would be nice to allow for stdin if you don't pass a query string?
+- [x] Would be nice to allow for stdin if you don't pass a query string?
 
 ## Buy me a coffee
 
