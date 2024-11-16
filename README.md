@@ -17,6 +17,9 @@ system's default browser.
 ## Usage
 
 ```sh
+# Search using stdin
+kweri
+
 # Search your favorite engine for "I like turtles"
 kweri "I like turtles"
 
